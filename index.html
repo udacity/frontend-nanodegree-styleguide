@@ -255,13 +255,14 @@
             <h3>Type Selectors</h3>
             <p>Avoid qualifying ID and class names with type selectors.</p>
             <p>Unless necessary (for example, with helper classes), do not use element names in conjunction with IDs or classes. Avoiding unnecessary ancestor selectors is useful for performance reasons.</p>
+            <p>It is also considered bad practice to use IDs in your CSS files. There are no situations where IDs provide a benefit over classes. If you need to use a unique name for an element, use a class. (The only benefit IDs provide is speed, and is only beneficial on pages with thousands of similar elements.)</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
-            <pre><code class="not-recommended">ul.contact-list { … }
+            <pre><code class="not-recommended">ul#example { … }
 div.error { … }</code></pre>
 
             <h4 class="recommended">Recommended:</h4>
-            <pre><code class="recommended">.contact-list { … }
+            <pre><code class="recommended">#example { … }
 .error { … }</code></pre>
         </article>
 
