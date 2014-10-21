@@ -13,7 +13,7 @@
 
     <section>
         <h2>Introduction</h2>
-        <p>This style guide acts as the official guide to follow in your projects. Udacity evaluators will use this guide to grade your projects. There are many opinions on the "ideal" style in the world of Front-End Web Development. Therefore, in order to reduce the confusion on what style a student should follow during the course of their projects, we urge all students to refer to this style guide to guide their projects.</p>
+        <p>This style guide acts as the official guide to follow in your projects. Udacity evaluators will use this guide to grade your projects. There are many opinions on the "ideal" style in the world of Front-End Web Development. Therefore, in order to reduce the confusion on what style a student should follow during the course of their projects, we urge all students to refer to this style guide for their projects.</p>
     </section>
 
     <section>
@@ -56,19 +56,19 @@
         <article>
             <h3>Encoding</h3>
             <p>Use UTF-8 (no BOM).</p>
-            <p>Make sure your editor uses UTF-8 as character encoding, without a byte order mark. Specify the encoding in HTML templates and documents via <code>&lt;meta charset="utf-8"&gt;</code>. Do not specify the encoding of style sheets as these assume UTF-8.</p>
+            <p>Make sure your editor uses UTF-8 as character encoding, without a byte order mark. Specify the encoding in HTML templates and documents with <code>&lt;meta charset="utf-8"&gt;</code>. Do not specify the encoding of style sheets as these assume UTF-8.</p>
         </article>
 
         <article>
             <h3>Comments</h3>
             <p>Explain code as needed, where possible.</p>
-            <p>Use comments to explain code: What does it cover, what purpose does it serve, why is the respective solution used or preferred?</p>
+            <p>Use comments to explain code: What does it cover, what purpose does it serve, and why is the respective solution used or preferred?</p>
         </article>
 
         <article>
             <h3>Action Items</h3>
             <p>Mark todos and action items with <code>TODO:</code>.</p>
-            <p>Highlight todos by using the keyword <code>TODO</code> only, not other formats like <code>@@</code>. Append action itmes after a colon as in <code>TODO: action item</code>.</p>
+            <p>Highlight todos by using the keyword <code>TODO</code> only, not other formats like <code>@@</code>. Append action items after a colon like this: <code>TODO: action item</code>.</p>
 
             <h4 class="recommended"></h4>
             <pre><code class="recommended">&lt;!-- TODO: add other fruits --&gt;
@@ -87,7 +87,7 @@
             <h3>Document Type</h3>
             <p>Use HTML5.</p>
             <p>HTML5 (HTML syntax) is preferred for all HTML documents: <code>&lt;!DOCTYPE html&gt;</code>.</p>
-            <p>Do not close void elements, ie. write <code>&lt;br&gt;</code>, not <code>&lt;br /&gt;</code>.</p>
+            <p>Do not close self-closing elements, ie. write <code>&lt;br&gt;</code>, not <code>&lt;br /&gt;</code>.</p>
         </article>
 
         <article>
@@ -128,7 +128,7 @@
             <h3>Multimedia Fallback</h3>
             <p>Provide alternative contents for multimedia.</p>
             <p>For multimedia, such as images, video, or animated objects via canvas, make sure to offer alternative access. For images that means use of meaningful alternative text and for video and audio transcripts and captions, if available.</p>
-            <p>Providing alternative contents is important for accessibility reasons. A blind user has few cues to tell what an image is about without the <code>alt</code> attributes and other users may have no way of understanding what video or audio contents are about either.</p>
+            <p>Providing alternative contents is important for accessibility reasons. A blind user has few cues to tell what an image is about without the <code>alt</code> attributes, and other users may have no way of understanding what video or audio contents are about either.</p>
             <p>For images whose alt attributes would introduce redundancy and for images whose purpose is purely decorative which you cannot immediately use CSS for, use no alternative text, as in <code>alt=""</code>.</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
@@ -143,7 +143,7 @@
             <p>Separate structure from presentation from behavior.</p>
             <p>Strictly keep structure (markup), presentation (styling), and behavior (scripting) apart, and try to keep the interaction between the three to an absolute minimum.</p>
             <p>That is, make sure documents and templates contain only HTML and HTML that is solely serving structural purposes. Move everything presentational into style sheets, and everything behavioral into scripts. In addition, keep the contact area as small as possible by linking as few style sheets and scripts as possible from documents and templates.</p>
-            <p>Separating structure from presentation from behavior is important for maintenance reasons. It is always more expensive to change HTML documents and templates than it is to update style sheets and scripts.</p>
+            <p>Separating structure from presentation from behavior is important for maintenance reasons. It is almost always more expensive to change HTML documents and templates than it is to update style sheets and scripts.</p>
         </article>
 
         <article>
@@ -302,13 +302,13 @@ padding: 0;</code></pre>
 
         <article>
             <h3>Leading 0s</h3>
-            <p>Omit leading <code>0</code>s in values.</p>
+            <p>Include leading <code>0</code>s in decimal values for readability.</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
-            <pre><code class="not-recommended">font-size: 0.8em;</code></pre>
+            <pre><code class="not-recommended">font-size: .8em;</code></pre>
 
             <h4 class="recommended">Recommended:</h4>
-            <pre><code class="recommended">font-size: .8em;</code></pre>
+            <pre><code class="recommended">font-size: 0.8em;</code></pre>
         </article>
 
         <article>
@@ -396,21 +396,21 @@ margin: 0;</code></pre>
             <p>Always use a single space between the last selector and the opening brace that begins the declaration block.</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
-            <pre><code class="not-recommended">#video{
+            <pre><code class="not-recommended">.video-block{
     margin: 0;
 }
 
-#audio
+.audio-block
 {
     margin: 0;
 }</code></pre>
 
             <h4 class="recommended">Recommended:</h4>
-            <pre><code class="recommended">#video {
+            <pre><code class="recommended">.video-block {
     margin: 0;
 }
 
-#audio {
+.audio-block {
     margin: 0;
 }</code></pre>
         </article>
@@ -477,16 +477,34 @@ html {
 
             <h4 class="recommended">Recommended:</h4>
             <pre><code class="recommended">/* Header */
-.header { … }
-.header-nav { … }
+.header {
+    …
+}
+
+.header-nav {
+    …
+}
+
 
 /* Content */
-.gallery { … }
-.gallery-img { … }
+.gallery {
+    …
+}
+
+.gallery-img {
+    …
+}
+
 
 /* Footer */
-.footer { … }
-.footer-nav { … }</code></pre>
+.footer {
+    …
+}
+
+.footer-nav {
+    …
+}
+</code></pre>
         </article>
     </section>
 </body>
