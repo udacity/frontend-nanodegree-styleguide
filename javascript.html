@@ -72,7 +72,7 @@
         <article>
             <h3>var</h3>
             <p>Always declare variables with <code>var</code>.</p>
-            <p>When you fail to specify <code>var</code>, the variable gets placed in the global context, potentiall clobbering existing values. Also, if there's no declaration, it's hard to tell in what scope a variable lives.</p>
+            <p>When you fail to specify <code>var</code>, the variable gets placed in the global context, potentially clobbering existing values. Also, if there's no declaration, it's hard to tell in what scope a variable lives.</p>
         </article>
 
         <article>
@@ -146,7 +146,7 @@ function bar(a, b) {
             <p>Only for iterating over keys in an object/map/hash.</p>
             <p><code>for-in</code> loops are often incorrectly used to loop over the elements in an array. This is however very error prone because it does not loop from <code>0</code> to <code>length - 1</code> but over all the present keys in the object and its prototype chain.</p>
 
-            <h4 class="not-recommended">Not Recoommended:</h4>
+            <h4 class="not-recommended">Not Recommended:</h4>
             <pre><code class="not-recommended">for (var key in arr) {
 console.log(arr[key]);
 }</code></pre>
@@ -219,7 +219,7 @@ var myObject = {
     // Do something else
 }</code></pre>
 
-            <p>Single-line array and object initializaers are allowed when they fit on one line. There should be no spaces after the opening bracket or before the closing bracket:</p>
+            <p>Single-line array and object initializers are allowed when they fit on one line. There should be no spaces after the opening bracket or before the closing bracket:</p>
 
             <h4 class="recommended">Recommended:</h4>
             <pre><code class="recommended">var array = [1, 2, 3];
@@ -316,7 +316,7 @@ var object = {
     var theName = name || 'John';
 }</code></pre>
 
-        <p><code>&&</code> is also use for shortening code. For instance, instead of this:</p>
+        <p><code>&&</code> is also used for shortening code. For instance, instead of this:</p>
 
         <h4 class="not-recommended">Not Recommended:</h4>
         <pre><code class="not-recommended">if (node) {
