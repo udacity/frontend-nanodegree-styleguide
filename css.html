@@ -31,13 +31,7 @@
         <article>
             <h3>Capitalization</h3>
             <p>Use only lowercase.</p>
-            <p>All code has to be lowercase. This applies to HTML element names, attributes, attribute values (unless text/CDATA), CSS selectors, properties and property values (with the exception of strings).</p>
-
-            <h4 class="not-recommended">Not Recommended:</h4>
-            <pre><code class="not-recommended">&lt;A HREF="/"&gt;Home&lt;/A&gt;</code></pre>
-
-            <h4 class="recommended">Recommended:</h4>
-            <pre><code class="recommended">&lt;a href="/"&gt;Home&lt;/a&gt;</code></pre>
+            <p>All code has to be lowercase. This applies to CSS selectors, properties and property values (with the exception of strings).</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
             <pre><code class="not-recommended">color: #E5E5E5;</code></pre>
@@ -52,10 +46,10 @@
             <p>Trailing white spaces are unnecessary and can complicate diffs.</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
-            <pre><code class="not-recommended">&lt;p&gt;What?&lt;/p&gt;__</code></pre>
+            <pre><code class="not-recommended">border: 0;__</code></pre>
 
             <h4 class="recommended">Recommended:</h4>
-            <pre><code class="recommended">&lt;p&gt;What?&lt;/p&gt;</code></pre>
+            <pre><code class="recommended">border: 0;</code></pre>
         </article>
     </section>
 
@@ -65,7 +59,7 @@
         <article>
             <h3>Encoding</h3>
             <p>Use UTF-8 (no BOM).</p>
-            <p>Make sure your editor uses UTF-8 as character encoding, without a byte order mark. Specify the encoding in HTML templates and documents with <code>&lt;meta charset="utf-8"&gt;</code>. Do not specify the encoding of style sheets as these assume UTF-8.</p>
+            <p>Make sure your editor uses UTF-8 as character encoding, without a byte order mark. Do not specify the encoding of style sheets as these assume UTF-8.</p>
         </article>
 
         <article>
@@ -80,12 +74,7 @@
             <p>Highlight todos by using the keyword <code>TODO</code> only, not other formats like <code>@@</code>. Append action items after a colon like this: <code>TODO: action item</code>.</p>
 
             <h4 class="recommended">Recommended:</h4>
-            <pre><code class="recommended">&lt;!-- TODO: add other fruits --&gt;
-&lt;ul&gt;
-    &lt;li&gt;Apples&lt;/li&gt;
-    &lt;li&gt;Oranges&lt;/li&gt;
-&lt;/ul&gt;
-    </code></pre>
+            <pre><code class="recommended">/* TODO: add button elements */</code></pre>
         </article>
     </section>
 
