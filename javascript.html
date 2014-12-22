@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Udacity Nanodegree Style Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300|Roboto+Condensed:400,700|Inconsolata">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">HTML</a></li>
+            <li><a href="css.html">CSS</a></li>
+            <li><a href="javascript.html" class="active">JavaScript</a></li>
+        </ul>
+    </nav>
+
+
+    <h1>Udacity Frontend Nanodegree Style Guide</h1>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>This style guide acts as the official guide to follow in your projects. Udacity evaluators will use this guide to grade your projects. There are many opinions on the "ideal" style in the world of Front-End Web Development. Therefore, in order to reduce the confusion on what style students should follow during the course of their projects, we urge all students to refer to this style guide for their projects.</p>
+    </section>
+
+    <section>
+        <h2>General Formatting Rules</h2>
+
+        <article>
+            <h3>Trailing Whitespace</h3>
+            <p>Remove trailing white spaces.</p>
+            <p>Trailing white spaces are unnecessary and can complicate diffs.</p>
+
+            <h4 class="not-recommended">Not Recommended:</h4>
+            <pre><code class="not-recommended">var name = "John Smith";__</code></pre>
+
+            <h4 class="recommended">Recommended:</h4>
+            <pre><code class="recommended">var name = "John Smith";</code></pre>
+        </article>
+    </section>
+
+    <section>
+        <h2>General Meta Rules</h2>
+
+        <article>
+            <h3>Encoding</h3>
+            <p>Use UTF-8 (no BOM).</p>
+            <p>Make sure your editor uses UTF-8 as character encoding, without a byte order mark.</p>
+        </article>
+
+        <article>
+            <h3>Comments</h3>
+            <p>Explain code as needed, where possible.</p>
+            <p>Use comments to explain code: What does it cover, what purpose does it serve, and why is the respective solution used or preferred?</p>
+        </article>
+
+        <article>
+            <h3>Action Items</h3>
+            <p>Mark todos and action items with <code>TODO:</code>.</p>
+            <p>Highlight todos by using the keyword <code>TODO</code> only, not other formats like <code>@@</code>. Append action items after a colon like this: <code>TODO: action item</code>.</p>
+
+            <h4 class="recommended">Recommended:</h4>
+            <pre><code class="recommended">// TODO: add other fruits</code></pre>
+        </article>
+    </section>
+
+    <section>
+        <h2>JavaScript Language Rules</h2>
+
+        <article>
+            <h3>var</h3>
+            <p>Always declare variables with <code>var</code>.</p>
+            <p>When you fail to specify <code>var</code>, the variable gets placed in the global context, potentiall clobbering existing values. Also, if there's no declaration, it's hard to tell in what scope a variable lives.</p>
+        </article>
+
+        <article>
+            <h3>Constants</h3>
+            <p>If a value is intended to be constant and immutable, it should be given a name in all capital letters, like <code>CONSTANT_VALUE</code>. Never use the <code>const</code> keyword as it's not supported by all browsers at this time.</p>
+        </article>
+
+        <article>
+            <h3>Semicolons</h3>
+            <p>Always use semicolons.</p>
+            <p>Relying on implicit insertion can cause subtle, hard to debug problems. Semicolons should be included at the end of function expressions, but not at the end of function declarations.</p>
+
+            <h4 class="not-recommended">Not Recommended:</h4>
+            <pre><code class="not-recommended">var foo = function() {
+    return true // Missing semicolon
+} // Missing semicolon
+
+function foo() {
+    return true;
+}; // Extra semicolon</code></pre>
+
+            <h4 class="recommended">Recommended:</h4>
+            <pre><code class="recommended">var foo = function() {
+    return true;
+};
+
+function foo() {
+    return true;
+}</code></pre>
+        </article>
+
+        <article>
+            <h3>Wrapper Objects for Primitive Types</h3>
+            <p>There's no reason to use wrapper objects for primitive types, plus they're dangerous. However, type casting is okay.</p>
+
+            <h4 class="not-recommended">Not Recommended:</h4>
+            <pre><code class="not-recommended">var x = new Boolean(0);
+if (x) {
+    alert('hi');    // Shows 'hi' because typeof x is truthy object
+}</code></pre>
+
+            <h4 class="recommended">Recommended:</h4>
+            <pre><code class="recommended">var x = Boolean(false);
+if (x) {
+    alert('hi');    // Show 'hi' because typeof x is a falsey boolean
+}</code></pre>
+        </article>
+
+        <article>
+            <h3>Closures</h3>
+            <p>Yes, but be careful.</p>
+            <p>The ability to create closures is perhaps the most useful and often overlooked feature in JavaScript. One thing to keep in mind, however, is that a closure keeps a pointer to its enclosing scope. As a result, attaching a closure to a DOM element can create a circular reference and thus, a memory leak.</p>
+
+            <h4 class="not-recommended">Not Recommended:</h4>
+            <pre><code class="not-recommended">function foo(element, a, b) {
+    element.onclick = function() { /* uses a and b */ }
+    }</code></pre>
+
+            <h4 class="recommended">Recommended:</h4>
+            <pre><code class="recommended">function foo(element, a, b) {
+    element.onclick = bar(a, b);
+}
+
+function bar(a, b) {
+    return function() { /* uses a nd b */ }
+}</code></pre>
+        </article>
+
+        <article>
+            <h3>for-in loop</h3>
+            <p>Only for iterating over keys in an object/map/hash.</p>
+            <p><code>for-in</code> loops are often incorrectly used to loop over the elements in an array. This is however very error prone because it does not loop from <code>0</code> to <code>length - 1</code> but over all the present keys in the object and its prototype chain.</p>
+
+            <h4 class="not-recommended">Not Recoommended:</h4>
+            <pre><code class="not-recommended">for (var key in arr) {
+console.log(arr[key]);
+}</code></pre>
+
+            <h4 class="recommended">Recommended:</h4>
+            <pre><code class="recommended">var len = array.length;
+for (var i = 0; i < len; i++) {
+    console.log(array[i]);
+}
+
+// or...
+
+array.forEach(function(val) {
+    console.log(val);
+});</code></pre>
+        </article>
+
+        <article>
+            <h3>Multiline String Literals</h3>
+            <p>Do not use.</p>
+
+            <p>The whitespace at the beginning of each line can't be safely stripped at compile time; whitespace after the slash will result in tricky errors; and while most script engines support this, it is not part of the specification.</p>
+
+            <h4 class="not-recommended">Not Recommended:</h4>
+            <pre><code class="not-recommended">var myString = 'A rather long string of English text, an error message \
+    actually that just keeps going and going -- an error \
+    message that is really really long.';</code></pre>
+
+            <h4 class="recommended">Recommended:</h4>
+            <pre><code class="recommended">var myString = 'A rather long string of English text, an error message' +
+    'actually that just keeps going and going -- an error' +
+    'message that is really really long.';</code></pre>
+        </article>
+
+        <article>
+            <h3>Array and Object Literals</h3>
+            <p>Use Array and Object literals instead of Array and Object constructors.</p>
+
+            <h4 class="not-recommended">Not Recommended:</h4>
+            <pre><code class="not-recommended">var myArray = new Array(x1, x2, x3);
+
+var myObject = new Object();
+myObject.a = 0;</code></pre>
+
+            <h4 class="recommended">Recommended:</h4>
+            <pre><code class="recommended">var myArray = [x1, x2, x3];
+
+var myObject = {
+    a: 0
+};</code></pre>
+        </article>
+    </section>
+
+    <section>
+        <h2>JavaScript Style Rules</h2>
+
+        <article>
+            <h3>Naming</h3>
+            <p>In general, <code>functionNamesLikeThis</code>, <code>variableNamesLikeThis</code>, <code>ClassNamesLikeThis</code>, <code>methodNamesLikeThis</code>, <code>CONSTANT_VALUES_LIKE_THIS</code> and <code>filenameslikethis.js</code>.</p>
+        </article>
+
+        <article>
+            <h3>Code Formatting</h3>
+            <p>Because of implicit semicolon insertion, always start your curly braces on the same line as whatever they're opening.</p>
+
+            <h4 class="recommended">Recommended:</h4>
+            <pre><code class="recommended">if (something) {
+    // Do something
+} else {
+    // Do something else
+}</code></pre>
+
+            <p>Single-line array and object initializaers are allowed when they fit on one line. There should be no spaces after the opening bracket or before the closing bracket:</p>
+
+            <h4 class="recommended">Recommended:</h4>
+            <pre><code class="recommended">var array = [1, 2, 3];
+var object = {a: 1, b: 2, c: 3};</code></pre>
+
+            <p>Multiline array and object initializers are indented one-level, with the braces on their own line, just like blocks:</p>
+
+            <h4 class="recommended">Recommended:</h4>
+            <pre><code class="recommended">var array = [
+    'Joe &lt;joe@email.com&gt;',
+    'Sal &lt;sal@email.com&gt;',
+    'Murr &lt;murr@email.com&gt;',
+    'Q &lt;q@email.com&gt;'
+];
+
+var object = {
+    id: 'foo',
+    class: 'foo-important',
+    name: 'notification'
+};</code></pre>
+        </article>
+
+        <article>
+            <h3>Parentheses</h3>
+            <p>Only where required.</p>
+            <p>Use sparingly and in general only where required by the syntax and semantics.</p>
+        </article>
+
+        <article>
+            <h3>Strings</h3>
+            <p>For consistency single-quotes (<code>'</code>) are preferred over double-quotes (<code>"</code>). This is helpful when creating strings that include HTML:</p>
+
+            <h4 class="recommended">Recommended:</h4>
+            <pre><code class="recommended">var element = '&lt;button class="btn"&gt;Click Me&lt;/button&gt;';</code></pre>
+        </article>
+    </section>
+
+    <section>
+        <h2>Tips and Tricks</h2>
+
+        <article>
+            <h3>True and False Boolean Expressions</h3>
+            <p>The following are all false in boolean expressions:</p>
+            <ul>
+                <li><code>null</code></li>
+                <li><code>undefined</code></li>
+                <li><code>''</code> the empty string</li>
+                <li><code>0</code> the number</li>
+            </ul>
+
+            <p>But be careful, because these are all true:</p>
+            <ul>
+                <li><code>'0'</code> the string</li>
+                <li><code>[]</code> the empty array</li>
+                <li><code>{}</code> the empty object</li>
+            </ul>
+        </article>
+
+        <article>
+            <h3>Conditional Ternary Operator</h3>
+            <p>The conditional ternary operator is recommended, although not required, for writing concise code. Instead of this:</p>
+
+            <h4 class="not-recommended">Not Recommended:</h4>
+            <pre><code class="not-recommended">if (val) {
+    return foo();
+} else {
+    return bar();
+}</code></pre>
+
+            <p>You can write this:</p>
+
+            <h4 class="recommended">Recommended:</h4>
+            <pre><code class="recommended">return val ? foo() : bar();</code></pre>
+        </article>
+
+        <article>
+            <h3>&& and ||</h3>
+            <p>These binary boolean operators are short-circuited and evaluate to the last evaluated term. <code>||</code> has been called the default operator because instead of writing this:</p>
+
+            <h4 class="not-recommended">Not Recommended:</h4>
+            <pre><code class="not-recommended">function foo(name) {
+    var theName;
+    if (name) {
+        theName = name;
+    } else {
+        theName = 'John';
+    }
+}</code></pre>
+
+            <p>You can write this:</p>
+
+            <h4 class="recommended">Recommended:</h4>
+            <pre><code class="recommended">function foo(name) {
+    var theName = name || 'John';
+}</code></pre>
+
+        <p><code>&&</code> is also use for shortening code. For instance, instead of this:</p>
+
+        <h4 class="not-recommended">Not Recommended:</h4>
+        <pre><code class="not-recommended">if (node) {
+    if (node.kids) {
+        console.log(node.kids);
+    }
+}</code></pre>
+
+        <p>You can do this:</p>
+
+        <h4 class="recommended">Recommended:</h4>
+        <pre><code class="recommended">if (node && node.kids) {
+    console.log(node.kids);
+}</code></pre>
+        </article>
+    </section>
+</body>
+</html>
