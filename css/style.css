@@ -12,6 +12,39 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+nav {
+    background: #294860;
+    margin: -1.5em;
+    padding: 0 1.5em;
+}
+
+nav a {
+    display: inline-block;
+    color: #fff;
+    padding: 0.5em;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background: #407096;
+}
+
+nav a.active {
+    color: #294860;
+    background: #FFF;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+}
+
 h1,
 h2,
 h3,
