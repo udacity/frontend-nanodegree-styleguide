@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Udacity Nanodegree Style Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300|Roboto+Condensed:400,700|Inconsolata">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">HTML</a></li>
+            <li><a href="css.html">CSS</a></li>
+            <li><a href="javascript.html">JavaScript</a></li>
+            <li><a href="git.html" class="active">Git</a></li>
+        </ul>
+    </nav>
+
+
+    <h1>Udacity Frontend Nanodegree Style Guide</h1>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>This style guide acts as the official guide to follow in your projects. Udacity evaluators will use this guide to grade your projects. There are many opinions on the "ideal" style in the world of Front-End Web Development. Therefore, in order to reduce the confusion on what style students should follow during the course of their projects, we urge all students to refer to this style guide for their projects.</p>
+    </section>
+
+    <section>
+        <h2>Commit Messages</h2>
+
+        <article>
+            <h3>Message Structure</h3>
+            <p>A commit messages consists of three distinct parts separated by a blank line: the title, an optional body and an optional footer. The layout looks this:</p>
+
+            <pre><code>type: subject
+
+body
+
+footer</code></pre>
+
+            <p>The title consists of the type of the message and subject.</p>
+        </article>
+
+        <article>
+            <h3>The Type</h3>
+            <p>The type is contained within the title and can be one of these types:</p>
+
+            <ul>
+                <li><strong>feat:</strong> a new feature</li>
+                <li><strong>fix:</strong> a bug fix</li>
+                <li><strong>docs:</strong> changes to documentation</li>
+                <li><strong>style:</strong> formatting, missing semi colons, etc; no code change</li>
+                <li><strong>refactor:</strong> refactoring production code</li>
+                <li><strong>test:</strong> adding tests, refactoring test; no production code change</li>
+                <li><strong>chore:</strong> updating build tasks, package manager configs, etc; no production code change</li>
+            </ul>
+        </article>
+
+        <article>
+            <h3>The Subject</h3>
+            <p>Subjects should be no greater than 50 characters, should begin with a capital letter and do not end with a period.</p>
+
+            <p>Use an imperative tone to describe what a commit does, rather than what it did. For example, use <strong>change</strong>; not changed or changes.</p>
+        </article>
+
+        <article>
+            <h3>The Body</h3>
+            <p>Not all commits are complex enough to warrant a body, therefore it is optional and only used when a commit requires a bit of explanation and context. Use the body to explain the <strong>what</strong> and <strong>why</strong> of a commit, not the how.</p>
+
+            <p>When writing a body, the blank line between the title and the body is required and you should limit the length of each line to no more than 72 characters.</p>
+        </article>
+
+        <article>
+            <h3>The Footer</h3>
+            <p>The footer is optional and is used to reference issue tracker IDs.</p>
+        </article>
+
+        <article>
+            <h3>Example Commit Message</h3>
+            <pre><code>Summarize changes in around 50 characters or less
+
+More detailed explanatory text, if necessary. Wrap it to about 72
+characters or so. In some contexts, the first line is treated as the
+subject of the commit and the rest of the text as the body. The
+blank line separating the summary from the body is critical (unless
+you omit the body entirely); various tools like `log`, `shortlog`
+and `rebase` can get confused if you run the two together.
+
+Explain the problem that this commit is solving. Focus on why you
+are making this change as opposed to how (the code explains that).
+Are there side effects or other unintuitive consequenses of this
+change? Here's the place to explain them.
+
+Further paragraphs come after blank lines.
+
+ - Bullet points are okay, too
+
+ - Typically a hyphen or asterisk is used for the bullet, preceded
+   by a single space, with blank lines in between, but conventions
+   vary here
+
+If you use an issue tracker, put references to them at the bottom,
+like this:
+
+Resolves: #123
+See also: #456, #789</code></pre>
+        </article>
+    </section>
+</body>
+</html>
