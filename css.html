@@ -14,7 +14,7 @@
             <li><a href="index.html">HTML</a></li>
             <li><a href="css.html" class="active">CSS</a></li>
             <li><a href="javascript.html">JavaScript</a></li>
-            <li><a href="https://udacity.github.io/git-styleguide/" target="_blank">Git</a></li>
+            <li><a href="https://udacity.github.io/git-styleguide/">Git</a></li>
         </ul>
     </nav>
 
@@ -187,12 +187,13 @@ padding: 0;</code></pre>
 
         <article>
             <h3>ID and Class Name Delimiters</h3>
-            <p>Separate words in ID and class names by a hyphen.</p>
-            <p>Do not concatenate words and abbreviations in selectors by any characters (including none at all) other than hyphens in order to improve understanding and scannability.</p>
+            <p>Separate words in ID and class names by a hyphen (<code>-</code>).</p>
+            <p>Use hyphens to concatenate words and abbreviations in selectors in order to improve understanding and scannability.</p>
+            <p>One exception: underscores (<code>_</code>) are also acceptable separators with <a href="http://getbem.com/" target="_blank">BEM style CSS selectors</a>.</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
             <pre><code class="not-recommended">.demoimage { … }
-.error_status { … }</code></pre>
+.errorStatus { … }</code></pre>
 
             <h4 class="recommended">Recommended:</h4>
             <pre><code class="recommended">.demo-image { … }
