@@ -92,3 +92,11 @@ pre code {
 .not-recommended {
     color: #cd0e3e;
 }
+
+a > i {
+    color: #307699;
+}
+
+a > i:hover {
+    color: black;
+}

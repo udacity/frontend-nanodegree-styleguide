@@ -5,7 +5,8 @@
     <title>Udacity Nanodegree Style Guide</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300|Roboto+Condensed:400,700|Inconsolata">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300|Roboto+Condensed:400,700|Inconsolata">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -30,7 +31,10 @@
         <h2>General Formatting Rules</h2>
 
         <article>
-            <h3>Trailing Whitespace</h3>
+            <h3>
+                <a href="#whitespace" id="whitespace"><i class="fa fa-link"></i></a>
+                Trailing Whitespace
+            </h3>
             <p>Remove trailing white spaces.</p>
             <p>Trailing white spaces are unnecessary and can complicate diffs.</p>
 
@@ -46,7 +50,10 @@
         </article>
 
         <article>
-            <h3>Indentation</h3>
+            <h3>
+                <a href="#indentation" id="indentation"><i class="fa fa-link"></i></a>
+                Indentation
+            </h3>
             <p>Indentation should be consistent throughout the entire file. Whether you choose to use tabs or spaces, or 2-spaces vs. 4-spaces - just be consistent!</p>
         </article>
     </section>
@@ -55,13 +62,19 @@
         <h2>General Meta Rules</h2>
 
         <article>
-            <h3>Encoding</h3>
+            <h3>
+                <a href="#encoding" id="encoding"><i class="fa fa-link"></i></a>
+                Encoding
+            </h3>
             <p>Use UTF-8 (no BOM).</p>
             <p>Make sure your editor uses UTF-8 as character encoding, without a byte order mark.</p>
         </article>
 
         <article>
-            <h3>Comments</h3>
+            <h3>
+                <a href="#comments" id="comments"><i class="fa fa-link"></i></a>
+                Comments
+            </h3>
             <p>Use comments to explain code: What does it cover, what purpose does it serve, and why is the respective solution used or preferred?</p>
             <p>You can optionally document your JavaScript functions with <a href="http://usejsdoc.org" target="_blank">JSDoc</a>, a documentation generator and standard for writing code comments. Its benefits include providing a specification to hold your comments to, and the command line <code>jsdoc</code> tool that will generate a website for your documentation. JSDoc provides many annotations you can use to document your code, but we only recommend that you utilize a small subset of the available options:</p>
             <ul>
@@ -111,7 +124,10 @@ function sum(a, b) {
         </article>
 
         <article>
-            <h3>Action Items</h3>
+            <h3>
+                <a href="#action-items" id="action-items"><i class="fa fa-link"></i></a>
+                Action Items
+            </h3>
             <p>Mark todos and action items with <code>TODO:</code>.</p>
             <p>Highlight todos by using the keyword <code>TODO</code> only, not other formats like <code>@@</code>. Append action items after a colon like this: <code>TODO: action item</code>.</p>
 
@@ -124,18 +140,27 @@ function sum(a, b) {
         <h2>JavaScript Language Rules</h2>
 
         <article>
-            <h3>var</h3>
+            <h3>
+                <a href="#var" id="var"><i class="fa fa-link"></i></a>
+                var
+            </h3>
             <p>Always declare variables with <code>var</code>.</p>
             <p>When you fail to specify <code>var</code>, the variable gets placed in the global context, potentially clobbering existing values. Also, if there's no declaration, it's hard to tell in what scope a variable lives.</p>
         </article>
 
         <article>
-            <h3>Constants</h3>
+            <h3>
+                <a href="#constants" id="constants"><i class="fa fa-link"></i></a>
+                Constants
+            </h3>
             <p>If a value is intended to be constant and immutable, it should be given a name in all capital letters, like <code>CONSTANT_VALUE</code>. Never use the <code>const</code> keyword as it's not supported by all browsers at this time.</p>
         </article>
 
         <article>
-            <h3>Semicolons</h3>
+            <h3>
+                <a href="#semicolons" id="semicolons"><i class="fa fa-link"></i></a>
+                Semicolons
+            </h3>
             <p>Always use semicolons.</p>
             <p>Relying on implicit insertion can cause subtle, hard to debug problems. Semicolons should be included at the end of function expressions, but not at the end of function declarations.</p>
 
@@ -159,7 +184,10 @@ function foo() {
         </article>
 
         <article>
-            <h3>Wrapper Objects for Primitive Types</h3>
+            <h3>
+                <a href="#wrapper-objects" id="wrapper-objects"><i class="fa fa-link"></i></a>
+                Wrapper Objects for Primitive Types
+            </h3>
             <p>There's no reason to use wrapper objects for primitive types, plus they're dangerous. However, type casting is okay.</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
@@ -176,7 +204,10 @@ if (x) {
         </article>
 
         <article>
-            <h3>Closures</h3>
+            <h3>
+                <a href="#closures" id="closures"><i class="fa fa-link"></i></a>
+                Closures
+            </h3>
             <p>Yes, but be careful.</p>
             <p>The ability to create closures is perhaps the most useful and often overlooked feature in JavaScript. One thing to keep in mind, however, is that a closure keeps a pointer to its enclosing scope. As a result, attaching a closure to a DOM element can create a circular reference and thus, a memory leak.</p>
 
@@ -196,7 +227,10 @@ function bar(a, b) {
         </article>
 
         <article>
-            <h3>for-in loop</h3>
+            <h3>
+                <a href="#for-in-loop" id="for-in-loop"><i class="fa fa-link"></i></a>
+                for-in loop
+            </h3>
             <p>Only for iterating over keys in an object/map/hash.</p>
             <p><code>for-in</code> loops are often incorrectly used to loop over the elements in an array. This is however very error prone because it does not loop from <code>0</code> to <code>length - 1</code> but over all the present keys in the object and its prototype chain.</p>
 
@@ -219,7 +253,10 @@ array.forEach(function(val) {
         </article>
 
         <article>
-            <h3>Multiline String Literals</h3>
+            <h3>
+                <a href="#string-literals" id="string-literals"><i class="fa fa-link"></i></a>
+                Multiline String Literals
+            </h3>
             <p>Do not use.</p>
 
             <p>The whitespace at the beginning of each line can't be safely stripped at compile time; whitespace after the slash will result in tricky errors; and while most script engines support this, it is not part of the specification.</p>
@@ -236,7 +273,10 @@ array.forEach(function(val) {
         </article>
 
         <article>
-            <h3>Array and Object Literals</h3>
+            <h3>
+                <a href="#arr-obj-literals" id="arr-obj-literals"><i class="fa fa-link"></i></a>
+                Array and Object Literals
+            </h3>
             <p>Use Array and Object literals instead of Array and Object constructors.</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
@@ -258,12 +298,18 @@ var myObject = {
         <h2>JavaScript Style Rules</h2>
 
         <article>
-            <h3>Naming</h3>
+            <h3>
+                <a href="#naming" id="naming"><i class="fa fa-link"></i></a>
+                Naming
+            </h3>
             <p>In general, <code>functionNamesLikeThis</code>, <code>variableNamesLikeThis</code>, <code>ClassNamesLikeThis</code>, <code>methodNamesLikeThis</code>, <code>CONSTANT_VALUES_LIKE_THIS</code> and <code>filenameslikethis.js</code>.</p>
         </article>
 
         <article>
-            <h3>Code Formatting</h3>
+            <h3>
+                <a href="#formatting" id="formatting"><i class="fa fa-link"></i></a>
+                Code Formatting
+            </h3>
             <p>Because of implicit semicolon insertion, always start your curly braces on the same line as whatever they're opening.</p>
 
             <h4 class="recommended">Recommended:</h4>
@@ -297,13 +343,19 @@ var object = {
         </article>
 
         <article>
-            <h3>Parentheses</h3>
+            <h3>
+                <a href="#parentheses" id="parentheses"><i class="fa fa-link"></i></a>
+                Parentheses
+            </h3>
             <p>Only where required.</p>
             <p>Use sparingly and in general only where required by the syntax and semantics.</p>
         </article>
 
         <article>
-            <h3>Strings</h3>
+            <h3>
+                <a href="#strings" id="strings"><i class="fa fa-link"></i></a>
+                Strings
+            </h3>
             <p>For consistency single-quotes (<code>'</code>) are preferred over double-quotes (<code>"</code>). This is helpful when creating strings that include HTML:</p>
 
             <h4 class="recommended">Recommended:</h4>
@@ -315,7 +367,10 @@ var object = {
         <h2>Tips and Tricks</h2>
 
         <article>
-            <h3>True and False Boolean Expressions</h3>
+            <h3>
+                <a href="#truthy-falsy" id="truthy-falsy"><i class="fa fa-link"></i></a>
+                True and False Boolean Expressions
+            </h3>
             <p>The following are all false in boolean expressions:</p>
             <ul>
                 <li><code>null</code></li>
@@ -333,7 +388,10 @@ var object = {
         </article>
 
         <article>
-            <h3>Conditional Ternary Operator</h3>
+            <h3>
+                <a href="#ternary-operator" id="ternary-operator"><i class="fa fa-link"></i></a>
+                Conditional Ternary Operator
+            </h3>
             <p>The conditional ternary operator is recommended, although not required, for writing concise code. Instead of this:</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
@@ -350,7 +408,10 @@ var object = {
         </article>
 
         <article>
-            <h3>&& and ||</h3>
+            <h3>
+                <a href="#and-or" id="and-or"><i class="fa fa-link"></i></a>
+                && and ||
+            </h3>
             <p>These binary boolean operators are short-circuited and evaluate to the last evaluated term. <code>||</code> has been called the default operator because instead of writing this:</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>

@@ -5,7 +5,8 @@
     <title>Udacity Nanodegree Style Guide</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300|Roboto+Condensed:400,700|Inconsolata">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300|Roboto+Condensed:400,700|Inconsolata">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -30,7 +31,10 @@
         <h2>General Formatting Rules</h2>
 
         <article>
-            <h3>Capitalization</h3>
+            <h3>
+                <a href="#capitalization" id="capitalization"><i class="fa fa-link"></i></a>
+                Capitalization
+            </h3>
             <p>Use only lowercase.</p>
             <p>All code has to be lowercase. This applies to CSS selectors, properties and property values (with the exception of strings).</p>
 
@@ -42,7 +46,10 @@
         </article>
 
         <article>
-            <h3>Trailing Whitespace</h3>
+            <h3>
+                <a href="#whitespace" id="whitespace"><i class="fa fa-link"></i></a>
+                Trailing Whitespace
+            </h3>
             <p>Remove trailing white spaces.</p>
             <p>Trailing white spaces are unnecessary and can complicate diffs.</p>
 
@@ -58,7 +65,10 @@
         </article>
 
         <article>
-            <h3>Indentation</h3>
+            <h3>
+                <a href="#indentation" id="indentation"><i class="fa fa-link"></i></a>
+                Indentation
+            </h3>
             <p>Indentation should be consistent throughout the entire file. Whether you choose to use tabs or spaces, or 2-spaces vs. 4-spaces - just be consistent!</p>
         </article>
     </section>
@@ -67,19 +77,28 @@
         <h2>General Meta Rules</h2>
 
         <article>
-            <h3>Encoding</h3>
+            <h3>
+                <a href="#encoding" id="encoding"><i class="fa fa-link"></i></a>
+                Encoding
+            </h3>
             <p>Use UTF-8 (no BOM).</p>
             <p>Make sure your editor uses UTF-8 as character encoding, without a byte order mark. Do not specify the encoding of style sheets as these assume UTF-8.</p>
         </article>
 
         <article>
-            <h3>Comments</h3>
+            <h3>
+                <a href="#comments" id="comments"><i class="fa fa-link"></i></a>
+                Comments
+            </h3>
             <p>Explain code as needed, where possible.</p>
             <p>Use comments to explain code: What does it cover, what purpose does it serve, and why is the respective solution used or preferred?</p>
         </article>
 
         <article>
-            <h3>Action Items</h3>
+            <h3>
+                <a href="#action-items" id="action-items"><i class="fa fa-link"></i></a>
+                Action Items
+            </h3>
             <p>Mark todos and action items with <code>TODO:</code>.</p>
             <p>Highlight todos by using the keyword <code>TODO</code> only, not other formats like <code>@@</code>. Append action items after a colon like this: <code>TODO: action item</code>.</p>
 
@@ -92,13 +111,19 @@
         <h2>CSS Style Rules</h2>
 
         <article>
-            <h3>CSS Validity</h3>
+            <h3>
+                <a href="#validity" id="validity"><i class="fa fa-link"></i></a>
+                CSS Validity
+            </h3>
             <p>Use valid CSS.</p>
             <p>Using valid CSS is a measurable baseline quality that ensures proper CSS usage and allows you to spot CSS code that may not have any effect and can be removed.</p>
         </article>
 
         <article>
-            <h3>ID and Class Naming</h3>
+            <h3>
+                <a href="#naming" id="naming"><i class="fa fa-link"></i></a>
+                ID and Class Naming
+            </h3>
             <p>Use meaningful or generic ID and class names.</p>
             <p>Instead of presentational of cryptic names, always use ID and class names that reflect the purpose of the element in question or that are otherwise generic.</p>
             <p>Names that are specific and reflect the purpose of the element should be preferred as these are most understandable and the least likely to change.</p>
@@ -114,7 +139,10 @@
         </article>
 
         <article>
-            <h3>Type Selectors</h3>
+            <h3>
+                <a href="#type-selectors" id="type-selectors"><i class="fa fa-link"></i></a>
+                Type Selectors
+            </h3>
             <p>Avoid qualifying ID and class names with type selectors.</p>
             <p>Unless necessary (for example, with helper classes), do not use element names in conjunction with IDs or classes. Avoiding unnecessary ancestor selectors is useful for performance reasons.</p>
             <p>It is also considered bad practice to use IDs in your CSS files. There are no situations where IDs provide a benefit over classes. If you need to use a unique name for an element, use a class. (The only benefit IDs provide is speed, and is only beneficial on pages with thousands of similar elements.)</p>
@@ -129,7 +157,10 @@ div.error { … }</code></pre>
         </article>
 
         <article>
-            <h3>Shorthand Properties</h3>
+            <h3>
+                <a href="#shorthand" id="shorthand"><i class="fa fa-link"></i></a>
+                Shorthand Properties
+            </h3>
             <p>Shorthand should be used.</p>
             <p>CSS offers a variety of shorthand properties (like <code>padding</code> rather than explicitly setting <code>padding-top</code>, <code>padding-bottom</code>, etc.) that should be used whenever possible, with the exception of font properties and properties intended to override properties of the same name in a framework such as Bootstrap.</p>
             <p>Using shorthand properties is useful for code efficiency and understandability. The <code>font</code> shorthand property is recommended when setting all font related properties but is not required when making minor modifications. When using the font shorthand property, keep in mind that if font size and family are not included browsers will ignore entire font statement.</p>
@@ -151,7 +182,10 @@ padding: 0 1em 2em;</code></pre>
         </article>
 
         <article>
-            <h3>0 and Units</h3>
+            <h3>
+                <a href="#units" id="units"><i class="fa fa-link"></i></a>
+                0 and Units
+            </h3>
             <p>Omit unit specification after <code>0</code> values.</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
@@ -164,7 +198,10 @@ padding: 0;</code></pre>
         </article>
 
         <article>
-            <h3>Leading 0s</h3>
+            <h3>
+                <a href="#leading-zeroes" id="leading-zeroes"><i class="fa fa-link"></i></a>
+                Leading 0s
+            </h3>
             <p>Include leading <code>0</code>s in decimal values for readability.</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
@@ -175,7 +212,10 @@ padding: 0;</code></pre>
         </article>
 
         <article>
-            <h3>Hexadecimal Notation</h3>
+            <h3>
+                <a href="#hex" id="hex"><i class="fa fa-link"></i></a>
+                Hexadecimal Notation
+            </h3>
             <p>Use 3-character hexadecimal notation where possible.</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
@@ -186,7 +226,10 @@ padding: 0;</code></pre>
         </article>
 
         <article>
-            <h3>ID and Class Name Delimiters</h3>
+            <h3>
+                <a href="#delimiters" id="delimiters"><i class="fa fa-link"></i></a>
+                ID and Class Name Delimiters
+            </h3>
             <p>Separate words in ID and class names by a hyphen (<code>-</code>).</p>
             <p>Use hyphens to concatenate words and abbreviations in selectors in order to improve understanding and scannability.</p>
             <p>One exception: underscores (<code>_</code>) are also acceptable separators when writing <a href="http://getbem.com/" target="_blank">BEM style CSS selectors</a>.</p>
@@ -201,7 +244,10 @@ padding: 0;</code></pre>
         </article>
 
         <article>
-            <h3>Hacks</h3>
+            <h3>
+                <a href="#hacks" id="hacks"><i class="fa fa-link"></i></a>
+                Hacks
+            </h3>
             <p>Avoid user agent detection as well as CSS "hacks"—try a different approach first.</p>
             <p>It's tempting to address styling difference over user agent detection or special CSS filters, workaround and hacks. Both approaches should be considered an absolute last resort in order to achieve and maintain an efficient and manageable code base. Consider if the intended style is absolutely critical to the functionality of your application or can the "offending" user agent "live without it".</p>
         </article>
@@ -211,7 +257,10 @@ padding: 0;</code></pre>
         <h2>CSS Formatting Rules</h2>
 
         <article>
-            <h3>Block Content Indentation</h3>
+            <h3>
+                <a href="#block-content" id="block-content"><i class="fa fa-link"></i></a>
+                Block Content Indentation
+            </h3>
             <p>Indent all block content, that is rules within rules as well as declarations to reflect hierarchy and improve understanding.</p>
 
             <h4 class="recommended">Recommended:</h4>
@@ -224,7 +273,10 @@ padding: 0;</code></pre>
         </article>
 
         <article>
-            <h3>Declaration Stops</h3>
+            <h3>
+                <a href="#declaration-stops" id="declaration-stops"><i class="fa fa-link"></i></a>
+                Declaration Stops
+            </h3>
             <p>Use a semicolon after every declaration for consistency and extensibility reasons.</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
@@ -241,7 +293,10 @@ padding: 0;</code></pre>
         </article>
 
         <article>
-            <h3>Property Name Stops</h3>
+            <h3>
+                <a href="#prop-name-stops" id="prop-name-stops"><i class="fa fa-link"></i></a>
+                Property Name Stops
+            </h3>
             <p>Always use a space after a property name's colon, but no space between property and colon, for consistency reasons.</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
@@ -256,7 +311,10 @@ margin: 0;</code></pre>
         </article>
 
         <article>
-            <h3>Declaration Block Separation</h3>
+            <h3>
+                <a href="#block-separation" id="block-separation"><i class="fa fa-link"></i></a>
+                Declaration Block Separation
+            </h3>
             <p>Always use a single space between the last selector and the opening brace that begins the declaration block.</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
@@ -280,7 +338,10 @@ margin: 0;</code></pre>
         </article>
 
         <article>
-            <h3>Selector and Declaration Separation</h3>
+            <h3>
+                <a href="#selector-declaration-separation" id="selector-declaration-separation"><i class="fa fa-link"></i></a>
+                Selector and Declaration Separation
+            </h3>
             <p>Always start a new line for each selector and declaration.</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
@@ -298,7 +359,10 @@ h3 {
         </article>
 
         <article>
-            <h3>Rule Separations</h3>
+            <h3>
+                <a href="#rule-separation" id="rule-separation"><i class="fa fa-link"></i></a>
+                Rule Separations
+            </h3>
             <p>Always put a blank line (two line breaks) between rules.</p>
 
             <h4 class="recommended">Recommended:</h4>
@@ -313,7 +377,10 @@ body {
         </article>
 
         <article>
-            <h3>CSS Quotation Marks</h3>
+            <h3>
+                <a href="#quotes" id="quotes"><i class="fa fa-link"></i></a>
+                CSS Quotation Marks
+            </h3>
             <p>Use double quotation marks for attribute selectors or property values. Do not use quotation marks in URI values (<code>url()</code>).</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
@@ -336,7 +403,10 @@ html {
         <h2>CSS Meta Rules</h2>
 
         <article>
-            <h3>Section Comments</h3>
+            <h3>
+                <a href="#section-comments" id="section-comments"><i class="fa fa-link"></i></a>
+                Section Comments
+            </h3>
             <p>If possible, group style sheet sections together by using comments. Separate sections with new lines.</p>
 
             <h4 class="recommended">Recommended:</h4>
