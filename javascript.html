@@ -229,10 +229,10 @@ function bar(a, b) {
         <article>
             <h3>
                 <a href="#for-in-loop" id="for-in-loop"><i class="fa fa-link"></i></a>
-                for-in vs forEach
+                for, for-in and forEach
             </h3>
             <h4>Array</h4>
-            <p><code>forEach</code> loops are preferred over <code>for-in</code> loops when iterating over an array.</p>
+            <p><code>forEach</code> or <code>for</code>loops are preferred over <code>for-in</code> loops when iterating over an array.</p>
 
             <h5 class="not-recommended">Not Recommended:</h5>
             <pre><code class="not-recommended">myArray = ['a', 1, 'etc'];
@@ -244,6 +244,12 @@ for (var indexNum in myArray) {
 myArray.forEach(function(val) {
     console.log(val);
 });</code></pre>
+<p>// or</p>
+            <pre><code class="recommended">myArray = ['a', 1, 'etc'];
+for (var indexCount = 0; indexCount < myArray.length; indexCount++) {
+    console.log(myArray[indexCount]);
+};</code></pre>
+
             <h4>Object</h4>
             <p><code>for-in</code> loops are often used to loop over keys in an object. This is very error prone because <code>for-in</code> does not loop from <code>0</code> to <code>length - 1</code> but over all the present keys in the object and its prototype chain.</p>
             <p>If possible, organize data so it is not necessary to iterate over objects. If that isn't possible, wrap the content of the <code>for-in</code> loop in a conditional statement to prevent it from from iterating over the prototype chain:</p>
@@ -252,6 +258,7 @@ myArray.forEach(function(val) {
 for (var key in myObj) {
     console.log(myObj[key]);
 }</code></pre>
+
 
             <h5 class="recommended">Recommended:</h5>
             <pre><code class="recommended">myObj = {'firstName':'Ada','lastName':'Lovelace'};
