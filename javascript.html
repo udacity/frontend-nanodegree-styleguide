@@ -229,27 +229,37 @@ function bar(a, b) {
         <article>
             <h3>
                 <a href="#for-in-loop" id="for-in-loop"><i class="fa fa-link"></i></a>
-                for-in loop
+                Iteration
             </h3>
-            <p>Only for iterating over keys in an object/map/hash.</p>
-            <p><code>for-in</code> loops are often incorrectly used to loop over the elements in an array. This is however very error prone because it does not loop from <code>0</code> to <code>length - 1</code> but over all the present keys in the object and its prototype chain.</p>
+            <h4>Array</h4>
+            <p><code>forEach</code> loops are preferred over <code>for-in</code> loops when iterating over an array.</p>
 
-            <h4 class="not-recommended">Not Recommended:</h4>
-            <pre><code class="not-recommended">for (var key in arr) {
-console.log(arr[key]);
+            <h5 class="not-recommended">Not Recommended:</h5>
+            <pre><code class="not-recommended">myArray = ['a', 1, 'etc'];
+for (var indexNum in myArray) {
+    console.log(myArray[indexNum]);
 }</code></pre>
-
-            <h4 class="recommended">Recommended:</h4>
-            <pre><code class="recommended">var len = array.length;
-for (var i = 0; i < len; i++) {
-    console.log(array[i]);
-}
-
-// or...
-
-array.forEach(function(val) {
+            <h5 class="recommended">Recommended:</h5>
+            <pre><code class="recommended">myArray = ['a', 1, 'etc'];
+myArray.forEach(function(val) {
     console.log(val);
 });</code></pre>
+            <h4>Object</h4>
+            <p><code>for-in</code> loops are often used to loop over keys in an object. This is very error prone because <code>for-in</code> does not loop from <code>0</code> to <code>length - 1</code> but over all the present keys in the object and its prototype chain.</p>
+            <p>If possible, organize data so it is not necessary to iterate over objects. If that isn't possible, wrap the content of the for-in loop in a conditional statement to prevent it from from iterating over the prototype chain:</p>
+            <h5 class="not-recommended">Not Recommended:</h5>
+            <pre><code class="not-recommended">myObj = {'firstName':'Ada','secondName':'Lovelace'};
+for (var key in myObj) {
+    console.log(myObj[key]);
+}</code></pre>
+
+            <h5 class="recommended">Recommended:</h5>
+            <pre><code class="recommended">myObj = {'firstName':'Ada','secondName':'Lovelace'};
+for (var key in myObj) {
+    if (myObj.hasOwnProperty(key)) {
+        console.log(myObj[key]);
+    }
+}</code></pre>
         </article>
 
         <article>
