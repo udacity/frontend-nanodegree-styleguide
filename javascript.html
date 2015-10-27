@@ -229,7 +229,7 @@ function bar(a, b) {
         <article>
             <h3>
                 <a href="#for-in-loop" id="for-in-loop"><i class="fa fa-link"></i></a>
-                Iteration
+                for-in vs forEach
             </h3>
             <h4>Array</h4>
             <p><code>forEach</code> loops are preferred over <code>for-in</code> loops when iterating over an array.</p>
@@ -246,7 +246,7 @@ myArray.forEach(function(val) {
 });</code></pre>
             <h4>Object</h4>
             <p><code>for-in</code> loops are often used to loop over keys in an object. This is very error prone because <code>for-in</code> does not loop from <code>0</code> to <code>length - 1</code> but over all the present keys in the object and its prototype chain.</p>
-            <p>If possible, organize data so it is not necessary to iterate over objects. If that isn't possible, wrap the content of the for-in loop in a conditional statement to prevent it from from iterating over the prototype chain:</p>
+            <p>If possible, organize data so it is not necessary to iterate over objects. If that isn't possible, wrap the content of the <code>for-in</code> loop in a conditional statement to prevent it from from iterating over the prototype chain:</p>
             <h5 class="not-recommended">Not Recommended:</h5>
             <pre><code class="not-recommended">myObj = {'firstName':'Ada','secondName':'Lovelace'};
 for (var key in myObj) {
