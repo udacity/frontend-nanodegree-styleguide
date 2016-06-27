@@ -238,7 +238,28 @@ function bar(a, b) {
             <pre><code class="not-recommended">myArray = ['a', 1, 'etc'];
 for (var indexNum in myArray) {
     console.log(myArray[indexNum]);
-}</code></pre>
+}
+
+var starWars = {
+    "creatures": [
+        {
+            "name": "bantha",
+            "face": "furry"
+        },
+        {
+            "name": "loth-cat",
+            "face": "toothy"
+        }
+    ]
+};
+
+
+for (var i in starWars.creatures) {
+
+    console.log(starWars.creatures[i].name);
+    console.log(starWars.creatures[i].face);
+};
+</code></pre>
             <h5 class="recommended">Recommended:</h5>
             <pre><code class="recommended">mySimpleArray = ['a', 1, 'etc'];
 mySimpleArray.forEach(function(val) {
