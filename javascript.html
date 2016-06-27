@@ -240,10 +240,30 @@ for (var indexNum in myArray) {
     console.log(myArray[indexNum]);
 }</code></pre>
             <h5 class="recommended">Recommended:</h5>
-            <pre><code class="recommended">myArray = ['a', 1, 'etc'];
-myArray.forEach(function(val) {
+            <pre><code class="recommended">mySimpleArray = ['a', 1, 'etc'];
+mySimpleArray.forEach(function(val) {
     console.log(val);
-});</code></pre>
+});
+
+var starWars = {
+    "creatures": [
+        {
+            "name": "bantha",
+            "face": "furry"
+        },
+        {
+            "name": "loth-cat",
+            "face": "toothy"
+        }
+    ]
+};
+
+starWars.creatures.forEach(function(creature){
+    console.log(creature.name);
+    console.log(creature.face)
+});
+
+</code></pre>
 <p>// or</p>
             <pre><code class="recommended">myArray = ['a', 1, 'etc'];
 for (var indexCount = 0; indexCount < myArray.length; indexCount++) {
