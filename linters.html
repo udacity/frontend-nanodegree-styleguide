@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Udacity Nanodegree Style Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300|Roboto+Condensed:400,700|Inconsolata">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">HTML</a></li>
+            <li><a href="css.html">CSS</a></li>
+            <li><a href="javascript.html">JavaScript</a></li>
+            <li><a href="https://udacity.github.io/git-styleguide/" target="_blank">Git</a></li>
+            <li><a href="linters.html" class="active">Linters</a></li>
+        </ul>
+    </nav>
+
+    <h1>Udacity Frontend Nanodegree Style Guide</h1>
+
+    <section>
+        <h2>What Are Linters?</h2>
+
+        <p>According to WikiPedia, linters:</p>
+
+        <blockquote cite="https://en.wikipedia.org/wiki/Lint_(software)">
+            ...are often used to find code that doesn't correspond to certain style guidelines. They can also be used as simple debuggers for common errors, or hard to find errors...
+        </blockquote>
+
+        <p>So a linter checks your code for accuracy of both syntax and style requirements.</p>
+
+        <p>Check out the following sections for information linting each file type:</p>
+
+        <ul>
+            <li><a href="#linting-html-section">Linting HTML</a></li>
+            <li><a href="#linting-css-section">Linting CSS</a></li>
+            <li><a href="#linting-js-section">Linting JavaScript</a></li>
+            <li><a href="#running-a-linter">Running A Linter</a></li>
+        </ul>
+    </section>
+
+    <section id="linting-html-section">
+        <h2>Linting HTML</h2>
+
+        <p>
+            The linter Udacity uses is <a href="http://htmlhint.com/" target="_blank">HTMLHint</a>. The <code>.htmlhintrc</code> file contains the configuration object used to validate your HTML files.
+        </p>
+
+        <p>
+            The validation rules can be found on the <a href="https://github.com/yaniswang/HTMLHint/wiki/Rules" target="_blank">Rules page</a> of the project's repo.
+        </p>
+    </section>
+
+    <section id="linting-css-section">
+        <h2>Linting CSS</h2>
+
+        <p>
+            The linter Udacity uses is <a href="https://stylelint.io/" target="_blank">Stylelint</a>. The <code>.stylelintrc</code> file contains the configuration object used to validate your CSS files.
+        </p>
+
+        <p>
+            All of the rules that Stylelint supports are located here: <a href="https://stylelint.io/user-guide/rules/" target="_blank">https://stylelint.io/user-guide/rules/</a>. If you have a question about how a specific rule works, just add the rule to the end of that URL. So to view how <code>length-zero-no-unit</code> works, check out the link: <a href="https://stylelint.io/user-guide/rules/length-zero-no-unit" target="_blank">https://stylelint.io/user-guide/rules/length-zero-no-unit</a>.
+        </p>
+    </section>
+
+    <section id="linting-js-section">
+        <h2>Linting JavaScript</h2>
+
+        <p>
+            The linter Udacity uses is <a href="http://eslint.org/" target="_blank">ESLint</a>. The <code>.eslintrc.json</code> file contains the configuration object used to validate your JavaScript files.
+        </p>
+
+        <p>
+            All of the rules that ESLint supports are located here: <a href="http://eslint.org/docs/rules/" target="_blank">http://eslint.org/docs/rules/</a>. If you have a question about how a specific rule works, just add the rule to the end of that URL. So to view how <code>no-trailing-spaces</code> works, check out the link: <a href="http://eslint.org/docs/rules/no-trailing-spaces" target="_blank">http://eslint.org/docs/rules/no-trailing-spaces</a>.
+        </p>
+    </section>
+
+    <section id="running-a-linter">
+        <h2>Running A Linter</h2>
+
+        <p>
+            The best way to develop with a linter is to have it active in your code editor while you're developing. To get the linters working in your editor:
+        </p>
+
+        <ul>
+            <li>make sure you have the linter file(s) in the root of your project's directory structure</li>
+            <li>install the necessary plugin/extension for your editor</li>
+        </ul>
+
+        <h3>Linter Plugins / Extensions</h3>
+
+        <p></p>
+
+        <ul>
+            <li>
+                Atom
+                <ul>
+                    <li>
+                        <a href="https://atom.io/packages/linter">Linter plugin</a> (required to run the following linter plugins)
+                    </li>
+                    <li>
+                        <a href="https://atom.io/packages/linter-htmlhint" target="_blank">linter-htmlhint plugin</a>
+                    </li>
+                    <li>
+                        <a href="https://atom.io/packages/linter-stylelint" target="_blank">linter-stylelint plugin</a>
+                    </li>
+                    <li>
+                        <a href="https://atom.io/packages/linter-eslint" target="_blank">linter-eslint plugin</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Sublime Text 3
+                <ul>
+                    <li>
+                        <a href="http://www.sublimelinter.com/en/latest/">SublimeLinter plugin</a> (required to run the following linter plugins)
+                    </li>
+                    <li>
+                        <a href="https://packagecontrol.io/packages/SublimeLinter-contrib-htmlhint" target="_blank">SublimeLinter-contrib-htmlhint plugin</a>
+                    </li>
+                    <li>
+                        <a href="https://packagecontrol.io/packages/SublimeLinter-contrib-stylelint" target="_blank">SublimeLinter-contrib-stylelint plugin</a>
+                    </li>
+                    <li>
+                        <a href="https://packagecontrol.io/packages/SublimeLinter-contrib-eslint" target="_blank">SublimeLinter-contrib-eslint plugin</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                VS Code
+                <ul>
+                    <li>
+                        <a href="https://marketplace.visualstudio.com/items?itemName=mkaufman.HTMLHint" target="_blank">HTMLHint extension</a>
+                    </li>
+                    <li>
+                        <a href="https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint" target="_blank">stylelint extension</a>
+                    </li>
+                    <li>
+                        <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank">ESLint extension</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</body>
+</html>
