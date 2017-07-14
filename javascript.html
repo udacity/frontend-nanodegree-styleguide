@@ -142,18 +142,20 @@ function sum(a, b) {
         <article>
             <h3>
                 <a href="#var" id="var"><i class="fa fa-link"></i></a>
-                var
+                Variable Declaration
             </h3>
-            <p>Always declare variables with <code>var</code>.</p>
-            <p>When you fail to specify <code>var</code>, the variable gets placed in the global context, potentially clobbering existing values. Also, if there's no declaration, it's hard to tell in what scope a variable lives.</p>
-        </article>
 
-        <article>
-            <h3>
-                <a href="#constants" id="constants"><i class="fa fa-link"></i></a>
-                Constants
-            </h3>
-            <p>If a value is intended to be constant and immutable, it should be given a name in all capital letters, like <code>CONSTANT_VALUE</code>. Never use the <code>const</code> keyword as it's not supported by all browsers at this time.</p>
+            <p>There are three ways to declare a variable in JavaScript:</p>
+
+            <ul>
+                <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const" target="_blank">const</a></code></li>
+                <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let" target="_blank">let</a></code></li>
+                <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var" target="_blank">var</a></code></li>
+            </ul>
+
+            <p>
+                When declaring variables, you should declare them using the keywords in the order listed above. Declare your variables with <code>const</code>, first. If you find that you need to reassign the variable later, use <code>let</code>. There isn't a good reason to use the <code>var</code> keyword anymore for variable declaration.
+            </p>
         </article>
 
         <article>
@@ -414,7 +416,7 @@ var object = {
 
             <h4 class="recommended">Recommended:</h4>
             <pre><code class="recommended">var element = '&lt;button class="btn"&gt;Click Me&lt;/button&gt;';</code></pre>
-            
+
             <p>** Notable exception to this is in JSON objects: double quotes are required per the <a href="http://www.json.org/">JSON specification</a></p>
         </article>
     </section>
