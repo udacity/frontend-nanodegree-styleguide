@@ -39,10 +39,10 @@
             <p>Trailing white spaces are unnecessary and can complicate diffs.</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
-            <pre><code class="not-recommended">var name = "John Smith";__</code></pre>
+            <pre><code class="not-recommended">const name = "John Smith";__</code></pre>
 
             <h4 class="recommended">Recommended:</h4>
-            <pre><code class="recommended">var name = "John Smith";</code></pre>
+            <pre><code class="recommended">const name = "John Smith";</code></pre>
 
             <p>If using Sublime Text, this can be done automatically each time you save a file by adding the following to your User Settings JSON file (you should be able to find this within Sublime Text's menu):</p>
 
@@ -167,7 +167,7 @@ function sum(a, b) {
             <p>Relying on implicit insertion can cause subtle, hard to debug problems. Semicolons should be included at the end of function expressions, but not at the end of function declarations.</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
-            <pre><code class="not-recommended">var foo = function() {
+            <pre><code class="not-recommended">const foo = () => {
     return true // Missing semicolon
 } // Missing semicolon
 
@@ -176,7 +176,7 @@ function foo() {
 }; // Extra semicolon</code></pre>
 
             <h4 class="recommended">Recommended:</h4>
-            <pre><code class="recommended">var foo = function() {
+            <pre><code class="recommended">const foo = () => {
     return true;
 };
 
@@ -193,13 +193,13 @@ function foo() {
             <p>There's no reason to use wrapper objects for primitive types, plus they're dangerous. However, type casting is okay.</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
-            <pre><code class="not-recommended">var x = new Boolean(0);
+            <pre><code class="not-recommended">const x = new Boolean(0);
 if (x) {
     alert('hi');    // Shows 'hi' because typeof x is truthy object
 }</code></pre>
 
             <h4 class="recommended">Recommended:</h4>
-            <pre><code class="recommended">var x = Boolean(false);
+            <pre><code class="recommended">const x = Boolean(false);
 if (x) {
     alert('hi');    // Show 'hi' because typeof x is a falsey boolean
 }</code></pre>
@@ -238,11 +238,11 @@ function bar(a, b) {
 
             <h5 class="not-recommended">Not Recommended:</h5>
             <pre><code class="not-recommended">myArray = ['a', 1, 'etc'];
-for (var indexNum in myArray) {
+for (const indexNum in myArray) {
     console.log(myArray[indexNum]);
 }
 
-var starWars = {
+const starWars = {
     "creatures": [
         {
             "name": "bantha",
@@ -254,7 +254,7 @@ var starWars = {
         }
     ]
 };
-for (var i in starWars.creatures) {
+for (const i in starWars.creatures) {
     console.log(starWars.creatures[i].name);
     console.log(starWars.creatures[i].face);
 };
@@ -265,7 +265,7 @@ mySimpleArray.forEach(function(val) {
     console.log(val);
 });
 
-var starWars = {
+const starWars = {
     "creatures": [
         {
             "name": "bantha",
@@ -285,7 +285,7 @@ starWars.creatures.forEach(function(creature) {
 </code></pre>
 <p>// or</p>
             <pre><code class="recommended">myArray = ['a', 1, 'etc'];
-for (var indexCount = 0; indexCount < myArray.length; indexCount++) {
+for (const indexCount = 0; indexCount < myArray.length; indexCount++) {
     console.log(myArray[indexCount]);
 };</code></pre>
 
@@ -294,14 +294,14 @@ for (var indexCount = 0; indexCount < myArray.length; indexCount++) {
             <p>If possible, organize data so it is not necessary to iterate over objects. If that isn't possible, wrap the content of the <code>for-in</code> loop in a conditional statement to prevent it from from iterating over the prototype chain.</p>
             <h5 class="not-recommended">Not Recommended:</h5>
             <pre><code class="not-recommended">myObj = {'firstName':'Ada','secondName':'Lovelace'};
-for (var key in myObj) {
+for (const key in myObj) {
     console.log(myObj[key]);
 }</code></pre>
 
 
             <h5 class="recommended">Recommended:</h5>
             <pre><code class="recommended">myObj = {'firstName':'Ada','lastName':'Lovelace'};
-for (var key in myObj) {
+for (const key in myObj) {
     if (myObj.hasOwnProperty(key)) {
         console.log(myObj[key]);
     }
@@ -318,12 +318,12 @@ for (var key in myObj) {
             <p>The whitespace at the beginning of each line can't be safely stripped at compile time; whitespace after the slash will result in tricky errors; and while most script engines support this, it is not part of the specification.</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
-            <pre><code class="not-recommended">var myString = 'A rather long string of English text, an error message \
+            <pre><code class="not-recommended">const myString = 'A rather long string of English text, an error message \
     actually that just keeps going and going -- an error \
     message that is really really long.';</code></pre>
 
             <h4 class="recommended">Recommended:</h4>
-            <pre><code class="recommended">var myString = 'A rather long string of English text, an error message' +
+            <pre><code class="recommended">const myString = 'A rather long string of English text, an error message' +
     'actually that just keeps going and going -- an error' +
     'message that is really really long.';</code></pre>
         </article>
@@ -336,15 +336,15 @@ for (var key in myObj) {
             <p>Use Array and Object literals instead of Array and Object constructors.</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
-            <pre><code class="not-recommended">var myArray = new Array(x1, x2, x3);
+            <pre><code class="not-recommended">const myArray = new Array(x1, x2, x3);
 
-var myObject = new Object();
+const myObject = new Object();
 myObject.a = 0;</code></pre>
 
             <h4 class="recommended">Recommended:</h4>
-            <pre><code class="recommended">var myArray = [x1, x2, x3];
+            <pre><code class="recommended">const myArray = [x1, x2, x3];
 
-var myObject = {
+const myObject = {
     a: 0
 };</code></pre>
         </article>
@@ -378,20 +378,20 @@ var myObject = {
             <p>Single-line array and object initializers are allowed when they fit on one line. There should be no spaces after the opening bracket or before the closing bracket:</p>
 
             <h4 class="recommended">Recommended:</h4>
-            <pre><code class="recommended">var array = [1, 2, 3];
-var object = {a: 1, b: 2, c: 3};</code></pre>
+            <pre><code class="recommended">const array = [1, 2, 3];
+const object = {a: 1, b: 2, c: 3};</code></pre>
 
             <p>Multiline array and object initializers are indented one-level, with the braces on their own line, just like blocks:</p>
 
             <h4 class="recommended">Recommended:</h4>
-            <pre><code class="recommended">var array = [
+            <pre><code class="recommended">const array = [
     'Joe &lt;joe@email.com&gt;',
     'Sal &lt;sal@email.com&gt;',
     'Murr &lt;murr@email.com&gt;',
     'Q &lt;q@email.com&gt;'
 ];
 
-var object = {
+const object = {
     id: 'foo',
     class: 'foo-important',
     name: 'notification'
@@ -415,7 +415,7 @@ var object = {
             <p>For consistency single-quotes (<code>'</code>) are preferred over double-quotes (<code>"</code>). This is helpful when creating strings that include HTML:</p>
 
             <h4 class="recommended">Recommended:</h4>
-            <pre><code class="recommended">var element = '&lt;button class="btn"&gt;Click Me&lt;/button&gt;';</code></pre>
+            <pre><code class="recommended">const element = '&lt;button class="btn"&gt;Click Me&lt;/button&gt;';</code></pre>
 
             <p>** Notable exception to this is in JSON objects: double quotes are required per the <a href="http://www.json.org/">JSON specification</a></p>
         </article>
@@ -473,21 +473,21 @@ var object = {
             <p>These binary boolean operators are short-circuited and evaluate to the last evaluated term. <code>||</code> has been called the default operator because instead of writing this:</p>
 
             <h4 class="not-recommended">Not Recommended:</h4>
-            <pre><code class="not-recommended">function foo(name) {
-    var theName;
+            <pre><code class="not-recommended">const foo = (name) => {
+    const theName;
     if (name) {
         theName = name;
     } else {
         theName = 'John';
     }
-}</code></pre>
+};</code></pre>
 
             <p>You can write this:</p>
 
             <h4 class="recommended">Recommended:</h4>
-            <pre><code class="recommended">function foo(name) {
-    var theName = name || 'John';
-}</code></pre>
+            <pre><code class="recommended">const foo = (name) => {
+    const theName = name || 'John';
+};</code></pre>
 
         <p><code>&&</code> is also used for shortening code. For instance, instead of this:</p>
 
