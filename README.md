@@ -1,4 +1,4 @@
-frontend-nanodegree-styleguide
+Udacity FrontEnd-Nanodegree-Style-Guide
 ==============================
 
 * Run `bower install` before working on it!
